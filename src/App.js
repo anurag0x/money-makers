@@ -11,17 +11,7 @@ function App() {
     imageLink: '',
   });
 
-  const notify = () => toast("Notification sent Successfully", {
-    position: "top-center",
-    autoClose: 1000,
-    hideProgressBar: true,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    theme: "light",
-    transition: "bounce",
-  });
+  const notify = () => toast("Notification sent Successfully")
 
   const [loading, setLoading] = useState(false);
   const [token, setToken] = useState("");
@@ -66,8 +56,12 @@ function App() {
           body: '',
           imageLink: '',
         });
+        messaging.onMessage(response);
+        messaging.onBackgroundMessage(response)
+        console.log(token)
+      
         console.log(response)
-        messaging.onBackgroundMessage(response);
+       
       } else {
         console.error('Error sending notification:', response.status, response.statusText);
         // Handle errors
