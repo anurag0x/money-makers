@@ -40,6 +40,7 @@ bash
 
 npm start
 The app will be accessible at http://localhost:3000.
+Or u can directly Visit "https://money-makers.vercel.app/"
 
 Allow notifications when prompted to grant permission.
 
