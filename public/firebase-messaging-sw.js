@@ -3,7 +3,6 @@ importScripts(
   "https://www.gstatic.com/firebasejs/8.10.0/firebase-messaging.js"
 );
 
-
 const firebaseConfig = {
   apiKey: "AIzaSyCD4foqq4a3LaDu-tq8e9Pqw77nFE7FR7s",
   authDomain: "money-makers-a9908.firebaseapp.com",
@@ -22,7 +21,7 @@ messaging.onBackgroundMessage((payload) => {
   const notificationTitle = payload.notification.title;
   const notificationOptions = {
     body: payload.notification.body,
-    icon: payload.notification.imageLink, 
+    icon: payload.notification.image, // Fix here
   };
 
   self.registration.showNotification(notificationTitle, notificationOptions);
@@ -33,11 +32,12 @@ messaging.onMessage((payload) => {
   const notificationTitle = payload.notification.title;
   const notificationOptions = {
     body: payload.notification.body,
-    icon: payload.notification.imageLink, 
+    icon: payload.notification.image, // Fix here
   };
 
   self.registration.showNotification(notificationTitle, notificationOptions);
 });
+
 messaging.setBackgroundMessageHandler((payload) => {
   console.log(
     "[firebase-messaging-sw.js] Received background message ",
