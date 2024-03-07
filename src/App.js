@@ -51,6 +51,7 @@ function App() {
       if (response.ok) {
         // Handle success, if needed
         notify(); // Notify on successful sending
+        console.log(responseData)
         setNotificationData({
           title: '',
           body: '',
