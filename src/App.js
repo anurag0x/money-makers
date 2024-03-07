@@ -56,8 +56,8 @@ function App() {
           body: '',
           imageLink: '',
         });
-        messaging.onMessage(response);
-        messaging.onBackgroundMessage(response)
+        // messaging.onMessage(response);
+        // messaging.onBackgroundMessage(response)
         console.log(token)
       
         console.log(response)
